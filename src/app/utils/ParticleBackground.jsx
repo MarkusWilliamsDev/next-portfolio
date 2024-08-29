@@ -23,9 +23,7 @@ export const ParticleBackground = () => {
 		});
 	}, []);
 
-	const particlesLoaded = (container) => {
-		console.log(container);
-	};
+	const particlesLoaded = () => {};
 
 	const options = useMemo(
 		() => ({
@@ -88,6 +86,9 @@ export const ParticleBackground = () => {
 					value: { min: 1, max: 5 },
 				},
 			},
+			background: {
+				color: "#F9FAFB",
+			},
 			detectRetina: true,
 		}),
 		[]
@@ -99,6 +100,7 @@ export const ParticleBackground = () => {
 				id="tsparticles"
 				particlesLoaded={particlesLoaded}
 				options={options}
+				className="bg-gray-50/75"
 			/>
 		);
 	}
