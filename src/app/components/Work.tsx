@@ -74,13 +74,9 @@ export default function Work() {
 						{allProjects.map((project, index) => (
 							<div key={index}>
 								<div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
-									<div className="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-3">
-										{/* <div className="bg-white shadow-lg object-contain rounded-lg w-3/4 h-3/4 p-6 m-auto">
-											<Image src={project.logo} alt={`${project.name} logo`} />
-										</div> */}
+									<div>
 										<Image
-											// className="bg-white shadow-lg object-contain rounded-lg w-3/4 p-6 m-auto h-44 w-44"
-											className="bg-white shadow-lg object-contain rounded-lg w-3/4 p-6 m-auto h-44 w-44"
+											className="bg-white shadow-lg object-contain rounded-lg p-6 m-auto h-44 w-44 "
 											src={project.logo}
 											alt={`${project.name} logo`}
 										/>
