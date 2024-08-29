@@ -74,9 +74,12 @@ export default function Work() {
 						{allProjects.map((project, index) => (
 							<div key={index}>
 								<div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
-									<div>
+									<div className="h-0 aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-3">
+										{/* <div className="bg-white shadow-lg object-contain rounded-lg w-3/4 h-3/4 p-6 m-auto">
+											<Image src={project.logo} alt={`${project.name} logo`} />
+										</div> */}
 										<Image
-											className="bg-white shadow-lg object-contain rounded-lg p-6 m-auto h-44 w-44 "
+											className="bg-white shadow-lg object-contain rounded-lg w-3/4 p-6 m-auto h-44 w-44"
 											src={project.logo}
 											alt={`${project.name} logo`}
 										/>
@@ -84,10 +87,8 @@ export default function Work() {
 									<div className="sm:col-span-2">
 										<div className="space-y-4">
 											<div className="text-lg leading-6 font-medium space-y-1">
-												<h2 className="text-2xl text-center sm:text-left">
-													{project.name}
-												</h2>
-												<div className="flex items-center space-x-4 justify-center sm:justify-start">
+												<h2 className="text-2xl">{project.name}</h2>
+												<div className="flex items-center space-x-4">
 													{project.github && (
 														<a
 															href={project.github}
@@ -115,7 +116,7 @@ export default function Work() {
 											</div>
 										</div>
 										{project.techUsed && (
-											<div className="flex items-center text-gray-600 mt-4 h-8 justify-center sm:justify-start">
+											<div className="flex items-center text-gray-600 mt-4 h-8">
 												<p className="pr-2 text-lg">Powered by</p>
 												{project.techUsed.map((TechLogo, index) => (
 													<div key={index} className="w-6 mx-1">
