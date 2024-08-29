@@ -22,8 +22,8 @@ export default function Navbar() {
 						<div className="flex space-x-4">
 							<NavLink href="/">Home</NavLink>
 							<NavLink href="/playground">Playground</NavLink>
-							<NavLink href="#work">Work</NavLink>
-							<NavLink href="#contact">Contact</NavLink>
+							<NavLink href="/#projects">Work</NavLink>
+							<NavLink href="/#contact">Contact</NavLink>
 						</div>
 					</div>
 					<div className="flex items-center sm:hidden">
