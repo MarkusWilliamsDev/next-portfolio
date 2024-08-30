@@ -13,7 +13,7 @@ export default function Hero() {
 	return (
 		<div className="relative bg-gray-50/75 overflow-hidden h-screen">
 			<ParticleBackground />
-			<div className="relative pt-6 pb-16 sm:pb-24">
+			<div className="relative pt-16 pb-16 sm:pb-24 z-10">
 				<main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
 					<div className="text-center">
 						<div className="flex justify-center">
