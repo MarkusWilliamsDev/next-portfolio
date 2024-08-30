@@ -31,7 +31,7 @@ const BlogContent: React.FC = () => (
 		</p>
 		<h3>Future Improvements</h3>
 		<p>
-			In the future, I'd like to add more interactive elements to this
+			In the future, I&apos;d like to add more interactive elements to this
 			playground, such as a form with proper TypeScript validation.
 		</p>
 	</div>
