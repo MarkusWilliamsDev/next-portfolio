@@ -15,21 +15,23 @@ export default function Navbar() {
 				<div className="flex justify-between h-16">
 					<div className="flex items-center">
 						<Link href="/" className="flex-shrink-0 flex items-center">
-							<span className="text-xl font-bold text-indigo-600">MW</span>
+							<span className="text-xl font-bold text-indigo-600 hover:text-purple-800 transition-colors duration-200">
+								MW
+							</span>
 						</Link>
 					</div>
 					<div className="hidden sm:ml-6 sm:flex sm:items-center">
 						<div className="flex space-x-4">
 							<NavLink href="/">Home</NavLink>
 							<NavLink href="/playground">Playgrounds</NavLink>
-							<NavLink href="/#projects">Work</NavLink>
+							<NavLink href="/#work">Work</NavLink>
 							<NavLink href="/#contact">Contact</NavLink>
 						</div>
 					</div>
 					<div className="flex items-center sm:hidden">
 						<button
 							onClick={toggleMenu}
-							className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+							className="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-purple-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-800 transition-colors duration-200"
 						>
 							<span className="sr-only">Open main menu</span>
 							{isMenuOpen ? (
@@ -51,10 +53,10 @@ export default function Navbar() {
 						<MobileNavLink href="/playground" onClick={toggleMenu}>
 							Playgrounds
 						</MobileNavLink>
-						<MobileNavLink href="#work" onClick={toggleMenu}>
+						<MobileNavLink href="/#work" onClick={toggleMenu}>
 							Work
 						</MobileNavLink>
-						<MobileNavLink href="#contact" onClick={toggleMenu}>
+						<MobileNavLink href="/#contact" onClick={toggleMenu}>
 							Contact
 						</MobileNavLink>
 					</div>
@@ -74,7 +76,7 @@ function NavLink({
 	return (
 		<Link
 			href={href}
-			className="text-gray-500 hover:bg-gray-50 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+			className="text-slate-600 hover:text-purple-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
 		>
 			{children}
 		</Link>
@@ -94,7 +96,7 @@ function MobileNavLink({
 		<Link
 			href={href}
 			onClick={onClick}
-			className="text-gray-500 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+			className="text-slate-600 hover:text-purple-800 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
 		>
 			{children}
 		</Link>

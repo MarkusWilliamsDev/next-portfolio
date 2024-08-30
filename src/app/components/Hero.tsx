@@ -40,7 +40,7 @@ export default function Hero() {
 						<div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
 							<div className="rounded-md shadow hover:drop-shadow-md duration-300">
 								<a
-									href="#projects"
+									href="#work"
 									className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 hover:text-purple-800 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 duration-300"
 								>
 									View work
