@@ -7,9 +7,9 @@ type PlaygroundLayoutProps = {
 
 const PlaygroundLayout = ({ children }: PlaygroundLayoutProps) => {
 	return (
-		<div className="min-h-screen bg-gray-50/75">
+		<>
 			<main>{children}</main>
-		</div>
+		</>
 	);
 };
 
