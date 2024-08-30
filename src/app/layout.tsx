@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Markus Williams Developer Portfolio",
-	description: "tbd",
+	description:
+		"Experienced full-stack developer specializing in modern web technologies. Explore my projects showcasing expertise in React, Next.js, Sitecore, and other innovative solutions for complex development challenges",
 };
 
 export default function RootLayout({
