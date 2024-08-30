@@ -33,11 +33,10 @@ function getPlaygroundInfo(playgroundName: string): PlaygroundInfo {
 		if (descriptionMatch) {
 			description = descriptionMatch[1].trim();
 		} else {
-			description = `Explore ${title} and see what you can create!`;
+			description = "";
 		}
 	} catch (error) {
 		console.error(`Error reading info for ${playgroundName}:`, error);
-		description = `Explore ${title} and see what you can create!`;
 	}
 
 	return {

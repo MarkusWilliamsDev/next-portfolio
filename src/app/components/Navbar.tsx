@@ -21,7 +21,7 @@ export default function Navbar() {
 					<div className="hidden sm:ml-6 sm:flex sm:items-center">
 						<div className="flex space-x-4">
 							<NavLink href="/">Home</NavLink>
-							<NavLink href="/playground">Playground</NavLink>
+							<NavLink href="/playground">Playgrounds</NavLink>
 							<NavLink href="/#projects">Work</NavLink>
 							<NavLink href="/#contact">Contact</NavLink>
 						</div>
@@ -49,7 +49,7 @@ export default function Navbar() {
 							Home
 						</MobileNavLink>
 						<MobileNavLink href="/playground" onClick={toggleMenu}>
-							Playground
+							Playgrounds
 						</MobileNavLink>
 						<MobileNavLink href="#work" onClick={toggleMenu}>
 							Work

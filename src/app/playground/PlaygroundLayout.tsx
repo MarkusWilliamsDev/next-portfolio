@@ -34,9 +34,6 @@ const PlaygroundLayout: React.FC<PlaygroundLayoutProps> = ({
 					{children}
 				</div>
 				<div className="bg-white rounded-lg shadow-md p-6">
-					<h2 className="text-2xl font-semibold mb-4 text-gray-800">
-						What I Did
-					</h2>
 					<div className="prose max-w-none">{blogContent}</div>
 				</div>
 			</div>
