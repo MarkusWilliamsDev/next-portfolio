@@ -13,7 +13,7 @@ export default function Hero() {
 	return (
 		<div className="relative bg-gray-50/75 overflow-hidden h-screen">
 			<ParticleBackground />
-			<div className="relative pt-6 pb-16 sm:pb-24">
+			<div className="relative pt-16 pb-16 sm:pb-24 z-10">
 				<main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
 					<div className="text-center">
 						<div className="flex justify-center">
@@ -40,7 +40,7 @@ export default function Hero() {
 						<div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
 							<div className="rounded-md shadow hover:drop-shadow-md duration-300">
 								<a
-									href="#projects"
+									href="#work"
 									className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 hover:text-purple-800 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 duration-300"
 								>
 									View work
