@@ -34,7 +34,7 @@ const allProjects = [
 		name: "NACUBO",
 		link: "https://www.nacubo.org/search-results",
 		about:
-			"Utilized Sitecore Search to display over 7,000 pages on the website.",
+			"Utilized Sitecore Search and React to display over 7,000 pages on the website.",
 		logo: nacuboLogo,
 		techUsed: [NextJS, TS, SitecoreLogo, SitecoreXMCLogo, SitecoreSearchLogo],
 	},
