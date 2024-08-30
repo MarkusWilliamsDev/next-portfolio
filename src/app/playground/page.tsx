@@ -63,13 +63,15 @@ export default function PlaygroundPage() {
 					{playgrounds.map((playground) => (
 						<div
 							key={playground.name}
-							className="bg-white rounded-lg shadow-md overflow-hidden"
+							className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full"
 						>
-							<div className="p-6">
+							<div className="p-6 flex-grow">
 								<h2 className="text-2xl font-semibold mb-3 text-gray-800">
 									{playground.title}
 								</h2>
-								<p className="text-gray-500 mb-4">{playground.description}</p>
+								<p className="text-gray-500">{playground.description}</p>
+							</div>
+							<div className="p-6 pt-0">
 								<Link
 									href={`/playground/${playground.name}`}
 									className="inline-flex items-center justify-center w-full bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
