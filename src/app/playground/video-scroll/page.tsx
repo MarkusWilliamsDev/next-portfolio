@@ -71,7 +71,9 @@ const BlogContent: React.FC = () => (
 			caused significant lag. I had to implement optimizations like using
 			requestAnimationFrame and reducing the frequency of time updates to
 			improve performance. Unfortunately, this approach still has some lag but
-			it is significantly better than before.
+			it is significantly better than before. I also compressed the video from
+			~7MB to ~1MB to further optimize performance, but this causes the video to
+			look noticeably worse.
 		</p>
 		<h3 className="text-xl font-semibold">Future Improvements</h3>
 		<p>
