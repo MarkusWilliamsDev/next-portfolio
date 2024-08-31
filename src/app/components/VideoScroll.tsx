@@ -18,7 +18,7 @@ const VideoScroll: React.FC<VideoScrollProps> = ({ videoSrc }) => {
 		if (previousTimeRef.current !== undefined) {
 			const video = videoRef.current;
 			const container = containerRef.current;
-			if (!video || !container) return;
+			if (!video || !container || !video.duration) return;
 
 			const { height } = container.getBoundingClientRect();
 			const windowHeight = window.innerHeight;
@@ -33,12 +33,19 @@ const VideoScroll: React.FC<VideoScrollProps> = ({ videoSrc }) => {
 
 			setProgress(scrollPercentage);
 
-			video.style.transform = `-translateY(${
-				-scrollPercentage * (video.videoHeight - container.clientHeight)
-			}px)`;
+			// don't divide by zero or a very small number
+			const videoHeightDiff = video.videoHeight - container.clientHeight;
+			if (videoHeightDiff > 1) {
+				video.style.transform = `translateY(${
+					-scrollPercentage * videoHeightDiff
+				}px)`;
+			}
 
 			if (Math.round(time / (1000 / 60)) % 7 === 0) {
-				video.currentTime = video.duration * scrollPercentage;
+				// make sure video.duration is not zero or very small
+				if (video.duration > 0.1) {
+					video.currentTime = video.duration * scrollPercentage;
+				}
 			}
 
 			setDebug(
@@ -63,12 +70,6 @@ const VideoScroll: React.FC<VideoScrollProps> = ({ videoSrc }) => {
 				(prev) =>
 					`${prev}\nVideo loaded. Duration: ${video.duration}s, Size: ${video.videoWidth}x${video.videoHeight}`
 			);
-
-			// Preload video frames
-			for (let i = 0; i <= 1; i += 0.1) {
-				video.currentTime = video.duration * i;
-			}
-			video.currentTime = 0;
 		};
 
 		const handleVideoError = (e: Event) => {
