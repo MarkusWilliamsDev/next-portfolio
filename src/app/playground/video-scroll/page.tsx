@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PlaygroundLayout from "../PlaygroundLayout";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -11,6 +11,32 @@ const description =
 	"Explore a video scroll effect where the video scrubs through as you scroll the page.";
 
 function VideoScrollDemo() {
+	const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+	useEffect(() => {
+		const checkScreenSize = () => {
+			setIsLargeScreen(window.innerWidth >= 768);
+		};
+
+		checkScreenSize();
+		window.addEventListener("resize", checkScreenSize);
+
+		return () => {
+			window.removeEventListener("resize", checkScreenSize);
+		};
+	}, []);
+
+	if (!isLargeScreen) {
+		return (
+			<div className="w-full flex items-start justify-center bg-gray-200 p-16">
+				<p className="text-center p-4">
+					This video scroll effect is not available on mobile. Please view on a
+					larger screen.
+				</p>
+			</div>
+		);
+	}
+
 	return (
 		<div className="w-full h-[300vh]">
 			<VideoScroll videoSrc="/earth-compressed.mp4" />
@@ -73,15 +99,19 @@ const BlogContent: React.FC = () => (
 			improve performance. Unfortunately, this approach still has some lag but
 			it is significantly better than before. I also compressed the video from
 			~7MB to ~1MB to further optimize performance, but this causes the video to
-			look noticeably worse.
+			look noticeably worse. Along with all of this, I was unable to make the
+			video scroll work on mobile. I will likely revisit this playground in the
+			future to improve the performance and functionality on mobile.
 		</p>
 		<h3 className="text-xl font-semibold">Future Improvements</h3>
 		<p>
-			In the future, I&apos;d like to add more interactive features, such as
-			allowing users to click on the video to jump to specific points. I&apos;m
-			also interested in exploring ways to further optimize performance,
-			possibly by using WebGL for rendering or implementing a custom video
-			player.
+			I would like for this to be viewable on mobile, there are a few issues
+			with loading the video properly now so I am just showing it on larger
+			devices. In the future, I&apos;d like to add more interactive features,
+			such as allowing users to click on the video to jump to specific points.
+			I&apos;m also interested in exploring ways to further optimize
+			performance, possibly by using WebGL for rendering or implementing a
+			custom video player.
 		</p>
 	</div>
 );
