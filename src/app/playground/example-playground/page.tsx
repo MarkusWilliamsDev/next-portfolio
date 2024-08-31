@@ -3,7 +3,7 @@ import PlaygroundLayout from "../PlaygroundLayout";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const title = "Example Playground";
+const title = "Playground Template";
 const description =
 	"This playground demonstrates the structure and implementation of the PlaygroundLayout component.";
 

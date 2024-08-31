@@ -55,7 +55,7 @@ export default function PlaygroundPage() {
 
 	return (
 		<div className="relative bg-gray-50">
-			<div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+			<div className="mx-auto py-24 px-4 max-w-7xl sm:px-6 lg:px-8">
 				<h1 className="text-indigo-900 text-center font-mono font-semibold text-2xl sm:text-4xl p-4 mb-8">
 					Code Playgrounds
 				</h1>

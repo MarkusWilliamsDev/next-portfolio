@@ -17,7 +17,7 @@ const PlaygroundLayout: React.FC<PlaygroundLayoutProps> = ({
 }) => {
 	return (
 		<div className="min-h-screen bg-gray-50">
-			<div className="container mx-auto px-4 py-8">
+			<div className="container mx-auto px-4 py-8 my-16">
 				<Link
 					href="/playground"
 					className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mb-4"
