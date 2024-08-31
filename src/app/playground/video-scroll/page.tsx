@@ -13,7 +13,7 @@ const description =
 function VideoScrollDemo() {
 	return (
 		<div className="w-full h-[300vh]">
-			<VideoScroll videoSrc="/earth.mp4" />
+			<VideoScroll videoSrc="/earth-compressed.mp4" />
 		</div>
 	);
 }
