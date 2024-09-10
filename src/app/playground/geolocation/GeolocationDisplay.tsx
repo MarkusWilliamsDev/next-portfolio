@@ -29,10 +29,11 @@ export default function GeolocationDisplay({
 					{geolocationData.country})
 				</p>
 				<p className="text-gray-700">
-					<strong>Region:</strong> {geolocationData.region}
+					<strong>Region:</strong>{" "}
+					{geolocationData.region.replaceAll("%20", " ")}
 				</p>
 				<p className="text-gray-700">
-					<strong>City:</strong> {geolocationData.city}
+					<strong>City:</strong> {geolocationData.city.replaceAll("%20", " ")}
 				</p>
 			</div>
 			<div className="mt-6 text-center text-sm text-gray-500">
