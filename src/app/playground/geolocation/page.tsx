@@ -1,6 +1,8 @@
 import { headers } from "next/headers";
 import PlaygroundLayout from "../PlaygroundLayout";
 import GeolocationDisplay from "./GeolocationDisplay";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const title = "Geolocation by IP";
 const description =
@@ -50,9 +52,8 @@ const BlogContent: React.FC = () => (
 			function. Here&apos;s the key part of the code that retrieves the
 			geolocation data:
 		</p>
-		<pre className="bg-gray-100 p-2 rounded-md">
-			<code>
-				{`function getGeolocationData() {
+		<SyntaxHighlighter language="typescript" style={vscDarkPlus}>
+			{`function getGeolocationData() {
   const headersList = headers();
   const country = headersList.get('x-vercel-ip-country') || 'Unknown';
   const countryName = country !== 'Unknown' 
@@ -63,8 +64,7 @@ const BlogContent: React.FC = () => (
 
   return { country, countryName, city, region };
 }`}
-			</code>
-		</pre>
+		</SyntaxHighlighter>
 		<p>
 			This function retrieves the country code, city, and region from the
 			headers. It also uses the `Intl.DisplayNames` API to convert the country
