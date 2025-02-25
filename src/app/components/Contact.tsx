@@ -25,7 +25,7 @@ export default function Contact() {
 	];
 
 	return (
-		<div className="flex bg-gray-50 relative" id="contact">
+		<div className="flex bg-gray-50 relative" id="contact" data-testid="contact-section">
 			<div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 				<div className="flex flex-wrap justify-center p-2">
 					{/* TODO: Resize & animate cards */}
