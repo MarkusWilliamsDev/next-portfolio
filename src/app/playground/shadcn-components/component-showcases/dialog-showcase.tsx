@@ -9,6 +9,7 @@ import {
 	DialogTitle,
 	DialogTrigger,
 	DialogFooter,
+	DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
@@ -37,10 +38,14 @@ export function DialogShowcase() {
 							description, content area, and a footer.
 						</div>
 						<DialogFooter>
-							<Button type="button" variant="outline">
-								Cancel
-							</Button>
-							<Button type="button">Save Changes</Button>
+							<DialogClose asChild>
+								<Button type="button" variant="outline">
+									Cancel
+								</Button>
+							</DialogClose>
+							<DialogClose asChild>
+								<Button type="button">Save Changes</Button>
+							</DialogClose>
 						</DialogFooter>
 					</>
 				);
@@ -78,10 +83,14 @@ export function DialogShowcase() {
 							</div>
 						</div>
 						<DialogFooter>
-							<Button type="button" variant="outline">
-								Cancel
-							</Button>
-							<Button type="button">Save Changes</Button>
+							<DialogClose asChild>
+								<Button type="button" variant="outline">
+									Cancel
+								</Button>
+							</DialogClose>
+							<DialogClose asChild>
+								<Button type="button">Save Changes</Button>
+							</DialogClose>
 						</DialogFooter>
 					</>
 				);
@@ -105,12 +114,16 @@ export function DialogShowcase() {
 							</p>
 						</div>
 						<DialogFooter>
-							<Button type="button" variant="outline">
-								Cancel
-							</Button>
-							<Button type="button" variant="destructive">
-								Delete
-							</Button>
+							<DialogClose asChild>
+								<Button type="button" variant="outline">
+									Cancel
+								</Button>
+							</DialogClose>
+							<DialogClose asChild>
+								<Button type="button" variant="destructive">
+									Delete
+								</Button>
+							</DialogClose>
 						</DialogFooter>
 					</>
 				);
@@ -185,15 +198,19 @@ export function DialogShowcase() {
 							</div>
 						</div>
 						<DialogFooter className="p-6 bg-gray-50 border-t rounded-b-lg">
-							<Button type="button" variant="outline">
-								Maybe Later
-							</Button>
-							<Button
-								type="button"
-								className="bg-indigo-600 hover:bg-indigo-700"
-							>
-								Upgrade Now
-							</Button>
+							<DialogClose asChild>
+								<Button type="button" variant="outline">
+									Maybe Later
+								</Button>
+							</DialogClose>
+							<DialogClose asChild>
+								<Button
+									type="button"
+									className="bg-indigo-600 hover:bg-indigo-700"
+								>
+									Upgrade Now
+								</Button>
+							</DialogClose>
 						</DialogFooter>
 					</>
 				);
@@ -245,8 +262,12 @@ export function DialogShowcase() {
       Dialog content
     </div>
     <DialogFooter>
-      <Button variant="outline">Cancel</Button>
-      <Button>Save</Button>
+      <DialogClose asChild>
+        <Button variant="outline">Cancel</Button>
+      </DialogClose>
+      <DialogClose asChild>
+        <Button>Save</Button>
+      </DialogClose>
     </DialogFooter>
   </DialogContent>
 </Dialog>`}
