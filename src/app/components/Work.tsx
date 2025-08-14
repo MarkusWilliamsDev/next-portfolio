@@ -76,71 +76,62 @@ const allProjects = [
 export default function Work() {
 	return (
 		<div id="work" className="relative bg-gray-50">
-			<div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
-				<div className="space-y-12">
-					<h1 className="text-indigo-900 text-center font-mono font-semibold text-2xl sm:text-4xl p-4">
-						My Work
-					</h1>
-
-					<div className="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0">
-						{allProjects.map((project, index) => (
-							<div key={index}>
-								<div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
-									<div>
-										<Image
-											className="bg-white shadow-lg object-contain rounded-lg p-6 m-auto h-44 w-44 "
-											src={project.logo}
-											alt={`${project.name} logo`}
-										/>
-									</div>
-									<div className="sm:col-span-2">
-										<div className="space-y-4">
-											<div className="text-lg leading-6 font-medium space-y-1">
-												<h2 className="text-2xl text-center sm:text-left">
-													{project.name}
-												</h2>
-												<div className="flex items-center space-x-4 justify-center sm:justify-start">
-													{project.github && (
-														<a
-															href={project.github}
-															target="_blank"
-															rel="noreferrer"
-															className="flex items-center w-1/2 justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
-														>
-															<Github />
-															<p className="font-mono">View code</p>
-														</a>
-													)}
-													<a
-														href={project.link}
-														target="_blank"
-														rel="noreferrer"
-														className="flex items-center w-1/2 justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
-													>
-														<p className="font-mono">visit</p>
-														<LinkIcon />
-													</a>
+			<div className="mx-auto py-24 px-4 max-w-7xl sm:px-6 lg:px-8">
+				<h1 className="text-indigo-900 text-center font-mono font-semibold text-2xl sm:text-4xl p-4 mb-8">
+					My Work
+				</h1>
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+					{allProjects.map((project, index) => (
+						<div
+							key={index}
+							className="bg-white rounded-lg shadow-md overflow-hidden"
+						>
+							<div className="flex flex-col sm:flex-row">
+								<div className="flex-shrink-0 p-6 flex justify-center sm:justify-start">
+									<Image
+										className="object-contain h-32 w-32"
+										src={project.logo}
+										alt={`${project.name} logo`}
+									/>
+								</div>
+								<div className="flex-1 p-6 pt-0 sm:pt-6">
+									<p className="text-gray-500 mb-4">{project.about}</p>
+									{project.techUsed && (
+										<div className="flex items-center text-gray-600 mb-4">
+											<p className="pr-2 text-sm">Powered by</p>
+											{project.techUsed.map((TechLogo, techIndex) => (
+												<div key={techIndex} className="w-5 mx-1">
+													<TechLogo className="w-full h-full hover:text-purple-800 duration-300" />
 												</div>
-											</div>
-											<div className="text-lg">
-												<p className="text-gray-500">{project.about}</p>
-											</div>
+											))}
 										</div>
-										{project.techUsed && (
-											<div className="flex items-center text-gray-600 mt-4 h-8 justify-center sm:justify-start">
-												<p className="pr-2 text-lg">Powered by</p>
-												{project.techUsed.map((TechLogo, index) => (
-													<div key={index} className="w-6 mx-1">
-														<TechLogo className="w-full h-full hover:text-purple-800 duration-300" />
-													</div>
-												))}
-											</div>
+									)}
+									<div className="flex space-x-2">
+										{project.github && (
+											<a
+												href={project.github}
+												target="_blank"
+												rel="noreferrer"
+												className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
+											>
+												<Github />
+												<p className="font-mono text-sm">View Code</p>
+											</a>
 										)}
+										<a
+											href={project.link}
+											target="_blank"
+											rel="noreferrer"
+											className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
+										>
+											<p className="font-mono text-sm">Visit Site</p>
+											<LinkIcon />
+										</a>
 									</div>
 								</div>
 							</div>
-						))}
-					</div>
+						</div>
+					))}
 				</div>
 			</div>
 		</div>
