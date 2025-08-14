@@ -14,18 +14,17 @@ export default function Navbar() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between h-16">
 					<div className="flex items-center">
-						<Link href="/" className="flex-shrink-0 flex items-center">
+						<Link href="/#top" className="flex-shrink-0 flex items-center">
 							<span className="text-xl font-bold text-indigo-600 hover:text-purple-800 transition-colors duration-200">
 								MW
 							</span>
 						</Link>
 					</div>
 					<div className="hidden sm:ml-6 sm:flex sm:items-center">
-						<div className="flex space-x-4">
-							<NavLink href="/">Home</NavLink>
-							<NavLink href="/playground">Playgrounds</NavLink>
+						<div className="flex items-center space-x-4">
 							<NavLink href="/#work">Work</NavLink>
 							<NavLink href="/#contact">Contact</NavLink>
+							<PlaygroundLink href="/playground">Playgrounds</PlaygroundLink>
 						</div>
 					</div>
 					<div className="flex items-center sm:hidden">
@@ -47,18 +46,15 @@ export default function Navbar() {
 			{isMenuOpen && (
 				<div className="sm:hidden">
 					<div className="pt-2 pb-3 space-y-1">
-						<MobileNavLink href="/" onClick={toggleMenu}>
-							Home
-						</MobileNavLink>
-						<MobileNavLink href="/playground" onClick={toggleMenu}>
-							Playgrounds
-						</MobileNavLink>
 						<MobileNavLink href="/#work" onClick={toggleMenu}>
 							Work
 						</MobileNavLink>
 						<MobileNavLink href="/#contact" onClick={toggleMenu}>
 							Contact
 						</MobileNavLink>
+						<MobilePlaygroundLink href="/playground" onClick={toggleMenu}>
+							Playgrounds
+						</MobilePlaygroundLink>
 					</div>
 				</div>
 			)}
@@ -83,6 +79,23 @@ function NavLink({
 	);
 }
 
+function PlaygroundLink({
+	href,
+	children,
+}: {
+	href: string;
+	children: React.ReactNode;
+}) {
+	return (
+		<Link
+			href={href}
+			className="bg-indigo-600 text-white hover:bg-purple-700 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+		>
+			{children}
+		</Link>
+	);
+}
+
 function MobileNavLink({
 	href,
 	onClick,
@@ -97,6 +110,26 @@ function MobileNavLink({
 			href={href}
 			onClick={onClick}
 			className="text-slate-600 hover:text-purple-800 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+		>
+			{children}
+		</Link>
+	);
+}
+
+function MobilePlaygroundLink({
+	href,
+	onClick,
+	children,
+}: {
+	href: string;
+	onClick: () => void;
+	children: React.ReactNode;
+}) {
+	return (
+		<Link
+			href={href}
+			onClick={onClick}
+			className="bg-indigo-600 text-white hover:bg-purple-700 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
 		>
 			{children}
 		</Link>

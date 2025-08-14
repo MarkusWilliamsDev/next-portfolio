@@ -25,25 +25,30 @@ export default function Contact() {
 	];
 
 	return (
-		<div className="flex bg-gray-50 relative" id="contact">
+		<footer className="bg-purple-800 text-white relative z-10" id="contact">
 			<div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-				<div className="flex flex-wrap justify-center p-2">
-					{/* TODO: Resize & animate cards */}
+				<div className="text-center mb-8">
+					<h2 className="text-4xl font-semibold mb-4">Get In Touch</h2>
+					<p className="text-purple-100">
+						Let's connect and build something amazing together
+					</p>
+				</div>
+				<div className="flex flex-wrap justify-center items-center gap-8">
 					{contactLogos.map((contactLogo, index) => (
 						<a
 							href={contactLogo.href}
 							target="_blank"
 							rel="noreferrer"
 							key={index}
+							className="flex flex-col items-center text-white hover:text-purple-200 transition-colors duration-300"
 						>
-							<div className="p-6 mx-6 my-4 sm:m-4 w-36 sm:w-60 bg-gray-100 rounded-lg drop-shadow-md hover:drop-shadow-lg text-indigo-600 hover:text-purple-800 transition-colors duration-300 ">
-								{<contactLogo.icon className="w-full h-12 mb-2 fill-current" />}
-								<p className="text-center font-medium">{contactLogo.name}</p>
+							<div className="w-10 h-10 flex items-center justify-center">
+								<contactLogo.icon className="w-8 h-8 fill-current" />
 							</div>
 						</a>
 					))}
 				</div>
 			</div>
-		</div>
+		</footer>
 	);
 }
