@@ -4,6 +4,7 @@ import saborLogo from "../assets/SABOR_Logo.webp";
 import doeLogo from "../assets/DOE_Logo.png";
 import healingPathsLogo from "../assets/Healing_Paths_Logo.png";
 import nacuboLogo from "../assets/NACUBO Logo.jpg";
+import ngcLogo from "../assets/Northrop Grumman_idtXx9V4ch_1.png";
 import { GrReactjs as ReactJS, GrGithub as Github } from "react-icons/gr";
 import {
 	SiJavascript as JS,
@@ -31,31 +32,42 @@ const allProjects = [
 		techUsed: [ReactJS, Tailwind, Firebase],
 	},
 	{
-		name: "NACUBO",
-		link: "https://www.nacubo.org/search-results",
+		name: "Northrop Grumman",
+		link: "https://www.northropgrumman.com/",
 		about:
-			"Utilized Sitecore Search and React to display over 7,000 pages on the website.",
+			"Played key roles in developing core site features, building custom components, integrating APIs, and ensuring site reliability. Contributed to deployment processes and ongoing performance optimization.",
+		logo: ngcLogo,
+		techUsed: [NextJS, CSharp, SitecoreLogo, SitecoreSearchLogo],
+	},
+	{
+		name: "NACUBO",
+		link: "https://www.nacubo.org/",
+		about:
+			"Refactored the site from a legacy .NET codebase to Next.js, executing a lift-and-shift migration while building new components and maintaining site functionality. Utilized Sitecore Search and React to display over 7,000 pages on the website.",
 		logo: nacuboLogo,
 		techUsed: [NextJS, TS, SitecoreLogo, SitecoreXMCLogo, SitecoreSearchLogo],
 	},
 	{
-		name: "San Antonio Board of Realtors (SABOR)",
-		link: "https://sabor.com/PropertySearch",
-		about: "",
+		name: "San Antonio Board of Realtors",
+		link: "https://sabor.com",
+		about:
+			"Integrated multiple real estate APIs to aggregate thousands of realtor profiles and property listings, enhancing site functionality and user experience.",
 		logo: saborLogo,
 		techUsed: [JS, SitecoreLogo, CSharp],
 	},
 	{
 		name: "Department of Energy Office of Science",
-		link: "https://science.osti.gov/Funding-Opportunities/Award",
-		about: "",
+		link: "https://science.osti.gov",
+		about:
+			"Built and maintained site components, and developed data visualization tools for thousands of datasets, supporting researchers and government users.",
 		logo: doeLogo,
 		techUsed: [SitecoreLogo, CSharp, NodeJS],
 	},
 	{
 		name: "Healing Paths",
 		link: "https://tema.azurewebsites.net/",
-		about: "",
+		about:
+			"Developed a progressive web app to support Native American teens in addiction recovery, featuring progress tracking and interactive tools.",
 		logo: healingPathsLogo,
 		techUsed: [ReactJS, JS, CSharp],
 	},
@@ -105,7 +117,7 @@ export default function Work() {
 														rel="noreferrer"
 														className="flex items-center w-1/2 justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
 													>
-														<p className="font-mono">Demo</p>
+														<p className="font-mono">visit</p>
 														<LinkIcon />
 													</a>
 												</div>
