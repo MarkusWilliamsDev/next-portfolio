@@ -24,20 +24,20 @@ import SitecoreXMCLogo from "../assets/logos/SitecoreXMCLogo";
 
 const allProjects = [
 	{
-		name: "Gif Guesser",
-		github: "https://github.com/MarkusWilliamsDev/Gif-Guesser",
-		link: "https://gifguesser.com/",
-		about: "A personal web game built with React utilizing the Giphy API.",
-		logo: gifGuesserLogo,
-		techUsed: [ReactJS, Tailwind, Firebase],
-	},
-	{
 		name: "Northrop Grumman",
 		link: "https://www.northropgrumman.com/",
 		about:
 			"Played key roles in developing core site features, building custom components, integrating APIs, and ensuring site reliability. Contributed to deployment processes and ongoing performance optimization.",
 		logo: ngcLogo,
 		techUsed: [NextJS, CSharp, SitecoreLogo, SitecoreSearchLogo],
+	},
+	{
+		name: "Department of Energy Office of Science",
+		link: "https://science.osti.gov",
+		about:
+			"Built and maintained site components, and developed data visualization tools for thousands of datasets, supporting researchers and government users.",
+		logo: doeLogo,
+		techUsed: [SitecoreLogo, CSharp, NodeJS],
 	},
 	{
 		name: "NACUBO",
@@ -55,21 +55,22 @@ const allProjects = [
 		logo: saborLogo,
 		techUsed: [JS, SitecoreLogo, CSharp],
 	},
-	{
-		name: "Department of Energy Office of Science",
-		link: "https://science.osti.gov",
-		about:
-			"Built and maintained site components, and developed data visualization tools for thousands of datasets, supporting researchers and government users.",
-		logo: doeLogo,
-		techUsed: [SitecoreLogo, CSharp, NodeJS],
-	},
+
 	{
 		name: "Healing Paths",
-		link: "https://tema.azurewebsites.net/",
+		link: "",
 		about:
 			"Developed a progressive web app to support Native American teens in addiction recovery, featuring progress tracking and interactive tools.",
 		logo: healingPathsLogo,
 		techUsed: [ReactJS, JS, CSharp],
+	},
+	{
+		name: "Gif Guesser",
+		github: "https://github.com/MarkusWilliamsDev/Gif-Guesser",
+		link: "https://gifguesser.com/",
+		about: "A personal web game built with React utilizing the Giphy API.",
+		logo: gifGuesserLogo,
+		techUsed: [ReactJS, Tailwind, Firebase],
 	},
 ];
 
@@ -118,15 +119,17 @@ export default function Work() {
 												<p className="font-mono text-sm">View Code</p>
 											</a>
 										)}
-										<a
-											href={project.link}
-											target="_blank"
-											rel="noreferrer"
-											className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
-										>
-											<p className="font-mono text-sm">Visit Site</p>
-											<LinkIcon />
-										</a>
+										{project.link && (
+											<a
+												href={project.link}
+												target="_blank"
+												rel="noreferrer"
+												className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
+											>
+												<p className="font-mono text-sm">Visit Site</p>
+												<LinkIcon />
+											</a>
+										)}
 									</div>
 								</div>
 							</div>
