@@ -8,7 +8,7 @@ type Playground = {
 export default function Playground() {
 	return (
 		<div className="relative bg-gray-50 flex justify-center flex-col px-4 pb-24">
-			<h1 className="text-indigo-900 text-center font-mono font-semibold text-4xl mb-8">
+			<h1 className="text-indigo-900 text-center font-semibold text-4xl mb-8">
 				Code Playground
 			</h1>
 			<div className="flex justify-center">
@@ -21,7 +21,7 @@ export default function Playground() {
 				href={"/playground"}
 				className="mt-6 flex items-center w-auto m-auto justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-4 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
 			>
-				<p className="font-mono">view all playgrounds</p>
+				<p>view all playgrounds</p>
 			</Link>
 		</div>
 	);
