@@ -23,13 +23,13 @@ export default function Hero() {
 								className="max-w-full h-44 w-44"
 							/>
 						</div>
-						<h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl cursor-default">
+						<h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl cursor-default mb-4">
 							<span className="block xl:inline">Hi, my name is</span>{" "}
 							<span className="inline-flex">
 								{characterHoverAnimation(nameCharArray)},
 							</span>
 						</h1>
-						<h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl w-2xl cursor-default">
+						<h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl w-2xl cursor-default mb-8">
 							<span className="block xl:inline ml-4 mr-4">
 								a developer with an eye for{" "}
 								<span className="inline-flex">
