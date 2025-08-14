@@ -1,79 +1,79 @@
-"use client";
-import React from "react";
-import ProfilePicture from "../assets/Profile_No_BG.png";
-import Image from "next/image";
-import { ParticleBackground } from "../utils/ParticleBackground";
+'use client';
+import React from 'react';
+import ProfilePicture from '../assets/Profile_No_BG.png';
+import Image from 'next/image';
+import { ParticleBackground } from '../utils/ParticleBackground';
+import { MdDownload } from 'react-icons/md';
 
 export default function Hero() {
-	let name = "Markus Williams";
-	let nameCharArray = name.split("");
-	let keyWord = "detail";
-	let keyWordCharArray = keyWord.split("");
+  let name = 'Markus Williams';
+  let nameCharArray = name.split('');
+  let keyWord = 'detail';
+  let keyWordCharArray = keyWord.split('');
 
-	return (
-		<div className="relative bg-gray-50/75 overflow-hidden min-h-screen">
-			<ParticleBackground />
-			<div className="relative pt-16 pb-16 sm:pb-24 z-10">
-				<main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
-					<div className="text-center">
-						<div className="flex justify-center">
-							<Image
-								src={ProfilePicture}
-								alt="Markus Williams"
-								className="max-w-full h-44 w-44"
-							/>
-						</div>
-						<h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl cursor-default mb-8">
-							<span className="block xl:inline">Hi, my name is</span>{" "}
-							<span className="inline-flex">
-								{characterHoverAnimation(nameCharArray)},
-							</span>
-							<br />
-							<span className="block xl:inline">
-								a developer with an eye for{" "}
-								<span className="inline-flex">
-									{characterHoverAnimation(keyWordCharArray)}
-								</span>
-							</span>
-						</h1>
-						<div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-							<div className="rounded-md shadow hover:drop-shadow-md duration-300">
-								<a
-									href="#work"
-									className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 hover:text-purple-800 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 duration-300"
-								>
-									View work
-								</a>
-							</div>
-							<div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 hover:drop-shadow-md duration-300">
-								<a
-									href="#contact"
-									className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md  text-white bg-indigo-600 hover:bg-purple-700 md:py-4 md:text-lg md:px-10 duration-300"
-								>
-									Get in touch
-								</a>
-							</div>
-						</div>
-					</div>
-				</main>
-			</div>
-		</div>
-	);
+  return (
+    <div className="relative bg-gray-50/75 overflow-hidden min-h-screen">
+      <ParticleBackground />
+      <div className="relative pt-16 pb-16 sm:pb-24 z-10">
+        <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+          <div className="text-center">
+            <div className="flex justify-center">
+              <Image src={ProfilePicture} alt="Markus Williams" className="max-w-full h-44 w-44" />
+            </div>
+            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl cursor-default mb-8">
+              <span className="block xl:inline">Hi, my name is</span>{' '}
+              <span className="inline-flex">{characterHoverAnimation(nameCharArray)},</span>
+              <br />
+              <span className="block xl:inline">
+                a developer with an eye for{' '}
+                <span className="inline-flex">{characterHoverAnimation(keyWordCharArray)}</span>
+              </span>
+            </h1>
+            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+              <div className="rounded-md shadow hover:drop-shadow-md duration-300">
+                <a
+                  href="#work"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 hover:text-purple-800 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 duration-300"
+                >
+                  View work
+                </a>
+              </div>
+              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 hover:drop-shadow-md duration-300">
+                <a
+                  href="#contact"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md  text-white bg-indigo-600 hover:bg-purple-700 md:py-4 md:text-lg md:px-10 duration-300"
+                >
+                  Get in touch
+                </a>
+              </div>
+            </div>
+            <div className="mt-4 flex justify-center">
+              <a
+                href="/Markus_Williams_Resume.pdf"
+                download="Markus_Williams_Resume.pdf"
+                className="inline-flex items-center px-4 py-2 text-lg font-medium text-indigo-600 hover:text-purple-800 transition-colors duration-200"
+              >
+                Download Resume
+                <MdDownload className="w-4 h-4 ml-2" />
+              </a>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
 }
 
 const characterHoverAnimation = (charArray: string[]) => {
-	return (
-		<>
-			{charArray.map((char, index) => {
-				return (
-					<span
-						key={index}
-						className="inline text-indigo-600 hover:text-purple-700 duration-300"
-					>
-						{char}
-					</span>
-				);
-			})}
-		</>
-	);
+  return (
+    <>
+      {charArray.map((char, index) => {
+        return (
+          <span key={index} className="inline text-indigo-600 hover:text-purple-700 duration-300">
+            {char}
+          </span>
+        );
+      })}
+    </>
+  );
 };
