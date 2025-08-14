@@ -25,7 +25,6 @@ export default function Logos() {
 		{ icon: Tailwind, name: "Tailwind" },
 		{ icon: NodeJS, name: "NodeJS" },
 		{ icon: CSharp, name: "C# .NET" },
-		{ icon: OpenAI, name: "OpenAI" },
 		{ icon: SitecoreLogo, name: "Sitecore" },
 		{ icon: SitecoreXMCLogo, name: "Sitecore XM Cloud" },
 		{ icon: SitecoreSearchLogo, name: "Sitecore Search" },
@@ -39,10 +38,14 @@ export default function Logos() {
 				</h1>
 				<Marquee gradient={false} speed={50} className="py-4">
 					{logos.map((logo, index) => (
-						<div className="flex items-center justify-center mx-8" key={index}>
-							{
-								<logo.icon className="w-20 h-20 text-indigo-800 hover:text-purple-700 transition-colors duration-300" />
-							}
+						<div
+							className="flex flex-col items-center justify-center mx-8 group cursor-pointer"
+							key={index}
+						>
+							<logo.icon className="w-20 h-20 text-indigo-800 group-hover:text-purple-700 transition-colors duration-300 mb-2" />
+							<p className="text-sm text-indigo-800 group-hover:text-purple-700 font-medium transition-colors duration-300">
+								{logo.name}
+							</p>
 						</div>
 					))}
 				</Marquee>
