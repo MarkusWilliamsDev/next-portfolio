@@ -7,7 +7,7 @@ type Playground = {
 
 export default function Playground() {
 	return (
-		<div className="relative bg-gray-50 flex justify-center flex-col px-4 pb-4">
+		<div className="relative bg-gray-50 flex justify-center flex-col px-4 pb-24">
 			<h1 className="text-indigo-900 text-center font-mono font-semibold text-2xl sm:text-4xl p-4">
 				Code Playground
 			</h1>
