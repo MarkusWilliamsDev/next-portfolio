@@ -6,7 +6,7 @@ import Playground from "./components/Playground";
 
 export default function Home() {
 	return (
-		<main>
+		<main id="top">
 			<Hero />
 			<Skills />
 			<Work />
