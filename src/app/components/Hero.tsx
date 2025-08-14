@@ -25,16 +25,16 @@ export default function Hero() {
 						</div>
 						<h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl cursor-default">
 							<span className="block xl:inline">Hi, my name is</span>{" "}
-							<div className="flex justify-center">
-								{characterHoverAnimation(nameCharArray)}
-							</div>
+							<span className="inline-flex">
+								{characterHoverAnimation(nameCharArray)},
+							</span>
 						</h1>
 						<h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl w-2xl cursor-default">
 							<span className="block xl:inline ml-4 mr-4">
-								A developer with an eye for{" "}
-								<div className="flex justify-center">
+								a developer with an eye for{" "}
+								<span className="inline-flex">
 									{characterHoverAnimation(keyWordCharArray)}
-								</div>
+								</span>
 							</span>
 						</h1>
 						<div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
@@ -64,17 +64,17 @@ export default function Hero() {
 
 const characterHoverAnimation = (charArray: string[]) => {
 	return (
-		<div className="flex justify-center">
+		<>
 			{charArray.map((char, index) => {
 				return (
 					<span
 						key={index}
-						className="block text-indigo-600 hover:text-purple-700 duration-300 xl:inline"
+						className="inline text-indigo-600 hover:text-purple-700 duration-300"
 					>
 						{char}
 					</span>
 				);
 			})}
-		</div>
+		</>
 	);
 };
