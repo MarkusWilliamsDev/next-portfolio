@@ -88,14 +88,14 @@ export default function Work() {
 							className="bg-white rounded-lg shadow-md overflow-hidden"
 						>
 							<div className="flex flex-col sm:flex-row">
-								<div className="flex-shrink-0 p-6 flex justify-center sm:justify-start">
+								<div className="flex-shrink-0 p-6 pr-0 flex justify-center sm:justify-start w-full sm:w-1/3">
 									<Image
-										className="object-contain h-32 w-32"
+										className="object-contain h-32 w-full"
 										src={project.logo}
 										alt={`${project.name} logo`}
 									/>
 								</div>
-								<div className="flex-1 p-6 pt-0 sm:pt-6">
+								<div className="flex-1 p-6 pt-0 sm:pt-6 w-full sm:w-2/3">
 									<p className="text-gray-500 mb-4">{project.about}</p>
 									{project.techUsed && (
 										<div className="flex items-center text-gray-600 mb-4">
