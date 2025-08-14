@@ -10,12 +10,7 @@ interface PlaygroundInfo {
 }
 
 function getPlaygroundInfo(playgroundName: string): PlaygroundInfo {
-  const pagePath = path.join(
-    process.cwd(),
-    'src/app/playground',
-    playgroundName,
-    'page.tsx'
-  );
+  const pagePath = path.join(process.cwd(), 'src/app/playground', playgroundName, 'page.tsx');
   let title = playgroundName.replace(/-/g, ' ');
   let description = '';
 
@@ -27,9 +22,7 @@ function getPlaygroundInfo(playgroundName: string): PlaygroundInfo {
       title = titleMatch[1].trim();
     }
 
-    const descriptionMatch = content.match(
-      /const\s+description\s*=\s*["'](.*)["']/
-    );
+    const descriptionMatch = content.match(/const\s+description\s*=\s*["'](.*)["']/);
     if (descriptionMatch) {
       description = descriptionMatch[1].trim();
     } else {
@@ -68,9 +61,7 @@ export default function PlaygroundPage() {
 							"
             >
               <div className="p-6 flex-grow">
-                <h2 className="text-2xl font-semibold mb-3 text-gray-800">
-                  {playground.title}
-                </h2>
+                <h2 className="text-2xl font-semibold mb-3 text-gray-800">{playground.title}</h2>
                 <p className="text-gray-500">{playground.description}</p>
               </div>
               <div className="p-6 pt-0">
@@ -79,7 +70,6 @@ export default function PlaygroundPage() {
                   className="inline-flex items-center justify-center w-full bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
                 >
                   <p>Explore Playground</p>
-                  <LinkIcon />
                 </Link>
               </div>
             </div>
