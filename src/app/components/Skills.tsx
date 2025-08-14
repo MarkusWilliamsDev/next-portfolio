@@ -32,11 +32,11 @@ export default function Logos() {
 	];
 	return (
 		<div className="bg-gray-50 relative">
-			<div className="max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:px-8">
-				<h1 className="text-indigo-900 text-center font-mono font-semibold text-2xl sm:text-4xl p-4 mb-8">
+			<div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+				<h1 className="text-indigo-900 text-center font-mono font-semibold text-2xl sm:text-4xl mb-8">
 					Skilled with
 				</h1>
-				<Marquee gradient={false} speed={50} className="py-4">
+				<Marquee gradient={false} speed={50} className="py-4 min-h-[140px]">
 					{logos.map((logo, index) => (
 						<div
 							className="flex flex-col items-center justify-center mx-8 group cursor-pointer"
