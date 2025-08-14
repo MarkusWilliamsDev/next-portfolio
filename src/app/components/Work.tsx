@@ -77,8 +77,8 @@ const allProjects = [
 export default function Work() {
 	return (
 		<div id="work" className="relative bg-gray-50">
-			<div className="mx-auto py-24 px-4 max-w-7xl sm:px-6 lg:px-8">
-				<h1 className="text-indigo-900 text-center font-mono font-semibold text-2xl sm:text-4xl p-4 mb-8">
+			<div className="mx-auto pb-24 px-4 max-w-7xl sm:px-6 lg:px-8">
+				<h1 className="text-indigo-900 text-center font-mono font-semibold text-4xl mb-8">
 					My Work
 				</h1>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

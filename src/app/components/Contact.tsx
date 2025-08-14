@@ -28,7 +28,7 @@ export default function Contact() {
 		<footer className="bg-purple-800 text-white relative z-10" id="contact">
 			<div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-8">
-					<h2 className="text-2xl font-semibold mb-4">Get In Touch</h2>
+					<h2 className="text-4xl font-semibold mb-4">Get In Touch</h2>
 					<p className="text-purple-100">
 						Let's connect and build something amazing together
 					</p>
