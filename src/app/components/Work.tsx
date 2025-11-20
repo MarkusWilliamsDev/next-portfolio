@@ -23,6 +23,7 @@ const allProjects = [
   {
     name: 'Northrop Grumman',
     link: 'https://www.northropgrumman.com/',
+    detailsLink: '/work/northrop-grumman',
     about:
       'Played key roles in developing core site features, building custom components, integrating APIs, and ensuring site reliability. Contributed to deployment processes and ongoing performance optimization.',
     logo: ngcLogo,
@@ -31,6 +32,7 @@ const allProjects = [
   {
     name: 'Department of Energy Office of Science',
     link: 'https://science.osti.gov',
+    detailsLink: '/work/doe',
     about:
       'Built and maintained site components, and developed data visualization tools for thousands of datasets, supporting researchers and government users.',
     logo: doeLogo,
@@ -39,6 +41,7 @@ const allProjects = [
   {
     name: 'Healing Paths',
     link: '',
+    detailsLink: '/work/healing-paths',
     about:
       'Developed a progressive web app to support Native American teens in addiction recovery, featuring progress tracking and interactive tools.',
     logo: healingPathsLogo,
@@ -47,6 +50,7 @@ const allProjects = [
   {
     name: 'NACUBO',
     link: 'https://www.nacubo.org/',
+    detailsLink: '/work/nacubo',
     about:
       'Refactored the site from a legacy .NET codebase to Next.js, executing a lift-and-shift migration while building new components and maintaining site functionality. Utilized Sitecore Search and React to display over 7,000 pages on the website.',
     logo: nacuboLogo,
@@ -55,6 +59,7 @@ const allProjects = [
   {
     name: 'San Antonio Board of Realtors',
     link: 'https://sabor.com',
+    detailsLink: '/work/sabor',
     about:
       'Integrated multiple real estate APIs to aggregate thousands of realtor profiles and property listings, enhancing site functionality and user experience.',
     logo: saborLogo,
@@ -110,8 +115,8 @@ export default function Work() {
                           rel="noreferrer"
                           className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
                         >
-                          <Github />
                           <p className="text-sm">View Code</p>
+                          <Github />
                         </a>
                       )}
                       {project.link && (
@@ -125,6 +130,12 @@ export default function Work() {
                           <LinkIcon />
                         </a>
                       )}
+                      <a
+                        href={project.detailsLink}
+                        className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
+                      >
+                        <p className="text-sm">Learn More</p>
+                      </a>
                     </div>
                   </div>
                 </div>
