@@ -73,34 +73,51 @@ const allProjects = [
 
 export default function Work() {
   return (
-    <div id="work" className="relative bg-gray-50">
+    <section id="work" className="relative bg-gray-50" aria-labelledby="work-heading">
       <div className="mx-auto pb-24 px-4 max-w-7xl sm:px-6 lg:px-8">
-        <h1 className="text-indigo-900 text-center font-semibold text-4xl mb-8">My Work</h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <h1 id="work-heading" className="text-indigo-900 text-center font-semibold text-4xl mb-8">
+          My Work
+        </h1>
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          role="list"
+          aria-label="Project portfolio"
+        >
           {allProjects.map((project, index) => (
-            <div
+            <article
               key={index}
               className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full"
+              role="listitem"
             >
               <div className="flex flex-col sm:flex-row flex-1">
                 <div className="flex-shrink-0 p-6 pr-0 flex justify-center sm:justify-start w-full sm:w-1/3">
                   <Image
                     className="object-contain h-32 w-full"
                     src={project.logo}
-                    alt={`${project.name} logo`}
+                    alt={`${project.name} company logo`}
                   />
                 </div>
                 <div className="flex-1 p-6 pt-0 sm:pt-6 w-full sm:w-2/3 flex flex-col">
+                  <h2 className="sr-only">{project.name}</h2>
                   <p className="text-gray-500 mb-4 flex-1">{project.about}</p>
                   <div className="mt-auto">
                     {project.techUsed && (
                       <div className="flex items-center text-gray-600 mb-4">
                         <p className="pr-2 text-sm">Powered by</p>
-                        {project.techUsed.map((TechLogo, techIndex) => (
-                          <div key={techIndex} className="w-5 mx-1">
-                            <TechLogo className="w-full h-full hover:text-purple-800 duration-300" />
-                          </div>
-                        ))}
+                        <div
+                          className="flex items-center"
+                          role="list"
+                          aria-label={`Technologies used for ${project.name}`}
+                        >
+                          {project.techUsed.map((TechLogo, techIndex) => (
+                            <div key={techIndex} className="w-5 mx-1" role="listitem">
+                              <TechLogo
+                                className="w-full h-full hover:text-purple-800 duration-300"
+                                aria-hidden="true"
+                              />
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     )}
                     <div className="flex space-x-2">
@@ -109,9 +126,10 @@ export default function Work() {
                           href={project.github}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
+                          className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-800 focus:ring-offset-2"
+                          aria-label={`View source code for ${project.name} on GitHub`}
                         >
-                          <Github />
+                          <Github aria-hidden="true" />
                           <p className="text-sm">View Code</p>
                         </a>
                       )}
@@ -120,20 +138,21 @@ export default function Work() {
                           href={project.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
+                          className="flex items-center justify-center bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-800 focus:ring-offset-2"
+                          aria-label={`Visit ${project.name} website (opens in new tab)`}
                         >
                           <p className="text-sm">Visit Site</p>
-                          <LinkIcon />
+                          <LinkIcon aria-hidden="true" />
                         </a>
                       )}
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

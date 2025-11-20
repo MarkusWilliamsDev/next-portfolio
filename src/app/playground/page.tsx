@@ -47,18 +47,24 @@ export default function PlaygroundPage() {
     .map((dirent) => getPlaygroundInfo(dirent.name));
 
   return (
-    <div className="relative bg-gray-50">
+    <main className="relative bg-gray-50" aria-labelledby="playgrounds-heading">
       <div className="mx-auto pb-24 px-4 max-w-7xl sm:px-6 lg:px-8">
-        <h1 className="text-indigo-900 text-center  font-semibold text-4xl p-4 mb-8">
+        <h1
+          id="playgrounds-heading"
+          className="text-indigo-900 text-center font-semibold text-4xl p-4 mb-8"
+        >
           Code Playgrounds
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          role="list"
+          aria-label="Available playground projects"
+        >
           {playgrounds.map((playground) => (
-            <div
+            <article
               key={playground.name}
-              className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full
-							
-							"
+              className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full"
+              role="listitem"
             >
               <div className="p-6 flex-grow">
                 <h2 className="text-2xl font-semibold mb-3 text-gray-800">{playground.title}</h2>
@@ -67,15 +73,16 @@ export default function PlaygroundPage() {
               <div className="p-6 pt-0">
                 <Link
                   href={`/playground/${playground.name}`}
-                  className="inline-flex items-center justify-center w-full bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200"
+                  className="inline-flex items-center justify-center w-full bg-gray-200 space-x-2 rounded-lg shadow-sm p-2 text-center hover:outline outline-purple-800 text-slate-600 hover:text-purple-800 fill-slate-600 hover:fill-purple-800 hover:bg-gray-300 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-800 focus:ring-offset-2"
+                  aria-label={`Explore ${playground.title} playground`}
                 >
                   <p>Explore Playground</p>
                 </Link>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
