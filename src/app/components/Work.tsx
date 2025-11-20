@@ -37,6 +37,14 @@ const allProjects = [
     techUsed: [SitecoreLogo, CSharp, NodeJS],
   },
   {
+    name: 'Healing Paths',
+    link: '',
+    about:
+      'Developed a progressive web app to support Native American teens in addiction recovery, featuring progress tracking and interactive tools.',
+    logo: healingPathsLogo,
+    techUsed: [ReactJS, JS, CSharp],
+  },
+  {
     name: 'NACUBO',
     link: 'https://www.nacubo.org/',
     about:
@@ -51,15 +59,6 @@ const allProjects = [
       'Integrated multiple real estate APIs to aggregate thousands of realtor profiles and property listings, enhancing site functionality and user experience.',
     logo: saborLogo,
     techUsed: [JS, SitecoreLogo, CSharp],
-  },
-
-  {
-    name: 'Healing Paths',
-    link: '',
-    about:
-      'Developed a progressive web app to support Native American teens in addiction recovery, featuring progress tracking and interactive tools.',
-    logo: healingPathsLogo,
-    techUsed: [ReactJS, JS, CSharp],
   },
   {
     name: 'Gif Guesser',
