@@ -47,7 +47,7 @@ export default function PlaygroundPage() {
     .map((dirent) => getPlaygroundInfo(dirent.name));
 
   return (
-    <div className="relative bg-gray-50">
+    <div className="relative bg-gray-50 mt-14">
       <div className="mx-auto pb-24 px-4 max-w-7xl sm:px-6 lg:px-8">
         <h1 className="text-indigo-900 text-center  font-semibold text-4xl p-4 mb-8">
           Code Playgrounds
